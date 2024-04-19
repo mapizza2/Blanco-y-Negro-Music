@@ -25,6 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    if (bateriaLink) {
+        bateriaLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            fetch('instruments/bateria.html')
+        });
+    }
     // Código para el enlace de la batería sigue igual...
 });
 
