@@ -29,19 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function attachKeyEvents() {
-    // Verificar si ya se han adjuntado eventos a las teclas
+    // Eliminar cualquier evento click previamente adjuntado
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => {
-        if (!key.hasAttribute('data-event-attached')) {
-            key.addEventListener('click', function(event) {
-                event.stopPropagation(); // Prevenir la propagación del evento
-                keyPressed(this.textContent.trim());
-            });
-            key.setAttribute('data-event-attached', 'true'); // Marcar la tecla como procesada
-        }
+        key.removeEventListener('click', keyPressed);
+        key.addEventListener('click', keyPressed);
     });
 }
 
-function keyPressed(note) {
+function keyPressed(event) {
+    const note = event.target.textContent.trim();
     alert('Tecla ' + note + ' pulsada!');
 }
