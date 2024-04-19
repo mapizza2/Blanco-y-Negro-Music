@@ -29,16 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function attachKeyEvents() {
-    // Eliminar cualquier evento click previamente adjuntado
+    // Eliminar cualquier evento mousedown previamente adjuntado
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => {
-        key.removeEventListener('click', keyPressed);
-        key.addEventListener('click', keyPressed);
+        key.removeEventListener('mousedown', keyPressed);
+        key.addEventListener('mousedown', keyPressed);
     });
 }
 
 function keyPressed(event) {
-    console.log(event); // Imprimimos el objeto de evento para depurar
     const note = event.target.textContent.trim(); // Accedemos al texto a través del evento
     alert('Tecla ' + note + ' pulsada!');
 }
