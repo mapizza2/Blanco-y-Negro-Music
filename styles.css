@@ -39,3 +39,48 @@ a {
 a:hover {
     color: #1b5e20;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #eeeeee;
+}
+
+.piano {
+    display: flex;
+    align-items: flex-end;
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.key {
+    cursor: pointer;
+    border: 2px solid #000;
+    border-radius: 5px 5px 0 0;
+    height: 200px;
+    width: 40px;
+    margin: 0 2px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.key:active {
+    transform: translateY(4px);
+}
+
+.white {
+    background-color: #fff;
+    z-index: 1;
+}
+
+.black {
+    background-color: #000;
+    width: 30px;
+    height: 120px;
+    margin: 0 -15px;
+    z-index: 2;
+}
