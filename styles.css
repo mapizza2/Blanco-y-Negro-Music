@@ -1,19 +1,19 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e8f5e9; /* Fondo claro */
+    background-color: #e8f5e9;
 }
 
 header {
-    background-color: #1b5e20; /* Verde oscuro */
+    background-color: #1b5e20;
     color: white;
     text-align: center;
     padding: 20px 0;
 }
 
 nav {
-    background-color: #a5d6a7; /* Verde medio */
+    background-color: #a5d6a7;
     padding: 10px 0;
     text-align: center;
 }
@@ -30,12 +30,12 @@ li {
 
 a {
     text-decoration: none;
-    color: #2e7d32; /* Verde más oscuro para texto */
+    color: #2e7d32;
     font-weight: bold;
     font-size: 18px;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #1b5e20; /* Verde oscuro para hover */
+    color: #1b5e20;
 }
