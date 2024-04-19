@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const content = document.getElementById('content');
 
     pianoLink.addEventListener('click', function() {
-        fetch('piano.html')
+        fetch('../instruments/piano.html')
             .then(response => response.text())
             .then(html => {
                 content.innerHTML = html;
