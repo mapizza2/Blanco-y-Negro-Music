@@ -38,6 +38,7 @@ function attachKeyEvents() {
 }
 
 function keyPressed(event) {
+    console.log(event); // Imprimimos el objeto de evento para depurar
     const note = event.target.textContent.trim(); // Accedemos al texto a través del evento
     alert('Tecla ' + note + ' pulsada!');
 }
