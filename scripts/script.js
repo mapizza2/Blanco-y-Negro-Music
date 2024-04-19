@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (pianoLink) {
         pianoLink.addEventListener('click', function(event) {
             event.preventDefault();
-            fetch('instruments/piano.html') // Ruta actualizada para el archivo HTML del piano
+            fetch('instruments/piano.html')
                 .then(response => response.text())
                 .then(html => {
                     content.innerHTML = html;
@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         link.id = 'piano-style';
                         link.rel = 'stylesheet';
                         link.type = 'text/css';
-                        link.href = 'styles/piano.css'; // Ruta actualizada para el archivo CSS del piano
+                        link.href = 'styles/piano.css';
                         link.media = 'all';
                         head.appendChild(link);
                     }
-                    attachKeyEvents();
+                    attachKeyEvents(); // Asegurémonos de adjuntar eventos después de cargar el piano
                 });
         });
     }
@@ -29,14 +29,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function attachKeyEvents() {
-    document.querySelectorAll('.key').forEach(key => {
-        key.addEventListener('click', function() {
-            keyPressed(this.textContent.trim());
-        });
+    // Verificar si ya se han adjuntado eventos a las teclas
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key => {
+        if (!key.hasAttribute('data-event-attached')) {
+            key.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevenir la propagación del evento
+                keyPressed(this.textContent.trim());
+            });
+            key.setAttribute('data-event-attached', 'true'); // Marcar la tecla como procesada
+        }
     });
 }
 
 function keyPressed(note) {
     alert('Tecla ' + note + ' pulsada!');
 }
-
