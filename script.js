@@ -5,29 +5,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const content = document.getElementById('content');
 
     // Verifica si los elementos existen antes de añadir listeners
-    if (pianoLink) {
-        pianoLink.addEventListener('click', function(event) {
-            event.preventDefault(); // Previene la navegación, importante si usas '#'
-            fetch('instruments/piano.html')
-                .then(response => response.text())
-                .then(html => {
-                    content.innerHTML = html;
-                    // Agrega la hoja de estilo del piano solo si no existe
-                    if (!document.getElementById('piano-style')) {
-                        var head = document.head;
-                        var link = document.createElement('link');
-                        link.id = 'piano-style';
-                        link.rel = 'stylesheet';
-                        link.type = 'text/css';
-                        link.href = 'styles/piano.css';
-                        link.media = 'all';
-                        head.appendChild(link);
-                    }
-                    // Asegúrate de que los eventos de teclas se asignen correctamente después de cargar el HTML
-                    attachKeyEvents();
-                });
-        });
-    }
+    pianoLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Previene la navegación, importante si usas '#'
+        fetch('instruments/piano.html')
+            .then(response => response.text())
+            .then(html => {
+                content.innerHTML = html;
+                // Agrega la hoja de estilo del piano solo si no existe
+                if (!document.getElementById('piano-style')) {
+                    var head = document.head;
+                    var link = document.createElement('link');
+                    link.id = 'piano-style';
+                    link.rel = 'stylesheet';
+                    link.type = 'text/css';
+                    link.href = 'styles/piano.css';
+                    link.media = 'all';
+                    head.appendChild(link);
+                }
+                // Asegúrate de que los eventos de teclas se asignen correctamente después de cargar el HTML
+                attachKeyEvents();
+            });
+    });
 
     if (bateriaLink) {
         bateriaLink.addEventListener('click', function(event) {
