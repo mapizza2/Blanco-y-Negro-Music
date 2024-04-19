@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', function() {
+
 function showPiano() {
     const content = document.getElementById('content');
     content.innerHTML = `
