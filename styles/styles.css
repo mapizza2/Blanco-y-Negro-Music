@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #2d5dcc; /* Un verde más oscuro */
+    background-color: red; /* Un verde más oscuro */
     color: white;
     text-align: center;
     padding: 20px 0;

@@ -44,6 +44,16 @@ function attachKeyEvents() {
 }
 
 function keyPressed(event) {
-    const note = event.target.textContent.trim(); // Accedemos al texto a través del evento
-    alert('Tecla ' + note + ' pulsada!');
+    console.log(event);
+    if (event != undefined) {
+        const note = event.target.dataset.keyname; // Accedemos al texto a través del evento
+        //alert('Tecla ' + note + ' pulsada!');
+        document.getElementById(note).play();
+        console.log("plating");
+    }
+
+   }
+
+function mostrar(texto) {
+    alert (texto);
 }
