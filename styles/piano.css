@@ -1,7 +1,7 @@
 .piano {
     display: flex;
     justify-content: center;
-    padding-left: 240px
+    padding-left: 240px;
 }
 
 .key {
@@ -14,7 +14,7 @@
 }
 
 .white {
-    background-color: white;
+    background-color: black;
     width: 60px;
     padding: 0px;
     margin: 0px;
@@ -23,7 +23,7 @@
 }
 
 .black {
-    background-color: black;
+    background-color: white;
     width: 40px;
     position: relative;
     left: -20px;
