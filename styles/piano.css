@@ -14,7 +14,7 @@
 }
 
 .white {
-    background-color: black;
+    background-color: white;
     width: 60px;
     padding: 0px;
     margin: 0px;
@@ -23,7 +23,7 @@
 }
 
 .black {
-    background-color: white;
+    background-color: black;
     width: 40px;
     position: relative;
     left: -20px;
