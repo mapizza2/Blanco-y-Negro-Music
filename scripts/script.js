@@ -57,3 +57,31 @@ function keyPressed(event) {
 function mostrar(texto) {
     alert (texto);
 }
+function clickEscala(event) {
+    console.log(event.name);
+    console.log(event.checked);
+    if (event.name == "Media") {
+        if (event.checked == true) {
+            document.getElementById("pianoMedio").style.display = "inline-flex";
+        }
+        else if (event.checked == false) {
+            document.getElementById("pianoMedio").style.display = "none";
+        }
+    }
+    if (event.name == "Aguda") {
+        if (event.checked == true) {
+            document.getElementById("pianoAgudo").style.display = "inline-flex";
+        }
+        else if (event.checked == false) {
+            document.getElementById("pianoAgudo").style.display = "none";
+        }
+    }
+    if (event.name == "Grave") {
+        if (event.checked == true) {
+            document.getElementById("pianoGrave").style.display = "inline-flex";
+        }
+        else if (event.checked == false) {
+            document.getElementById("pianoGrave").style.display = "none";
+        }
+    }
+}

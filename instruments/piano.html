@@ -1,65 +1,170 @@
-
-<div class="piano">
-    <div class="key white" data-keyname = "DO3" onclick="keyPressed()">
-         <audio id = "DO3" src = "instruments/notas/piano/DO3.mp3" type = "audio/mpeg"> </audio>
-         <label>Do</label>
-        </div>
-
-    <div class="key black" data-keyname = "DOS3" onclick="keyPressed()">
-         <audio id = "DOS3" src = "instruments/notas/piano/DOS3.mp3" type = "audio/mpeg"> </audio>
-         <label>Do#</label>
-        </div>
-    
-    <div class="key sostenido white" style="left: -45px" data-keyname = "RE3" onclick="keyPressed()">
-         <audio id = "RE3" src = "instruments/notas/piano/RE3.mp3" type = "audio/mpeg"> </audio>
-         <label>Re</label>
-        </div>
-    
-    <div class="key black sostenido"style="left: -65px"  data-keyname = "RES3" onclick="keyPressed()">
-         <audio id = "RES3" src = "instruments/notas/piano/RES3.mp3" type = "audio/mpeg"> </audio>
-         <label>Re#</label>
-        </div>
-    
-    <div class="key white" style="left: -90px"   data-keyname = "MI3" onclick="keyPressed()">
-         <audio id = "MI3" src = "instruments/notas/piano/MI3.mp3" type = "audio/mpeg"> </audio>
-         <label>Mi</label>
-        </div>
-    
-    <div class="key white" style="left: -100px" data-keyname = "FA3" onclick="keyPressed()">
-         <audio id = "FA3" src = "instruments/notas/piano/FA3.mp3" type = "audio/mpeg"> </audio>
-         <label>Fa</label>
-        </div>
-   
-    <div class="key black" style="left: -125px" data-keyname = "FAS3" onclick="keyPressed()">
-         <audio id = "FAS3" src = "instruments/notas/piano/FAS3.mp3" type = "audio/mpeg"> </audio>
-         <label>Fa#</label>
-        </div>
-
-    <div class="key white" style="left: -145px" data-keyname = "SOL3" onclick="keyPressed()">
-         <audio id = "SOL3" src = "instruments/notas/piano/SOL3.mp3" type = "audio/mpeg"> </audio>
-         <label>Sol</label>
-        </div>
-    
-    <div class="key black" style="left: -170px" data-keyname = "SOLS3" onclick="keyPressed()">
-         <audio id = "SOLS3" src = "instruments/notas/piano/SOLS3.mp3" type = "audio/mpeg"> </audio>
-         <label>Sol#</label>
-        </div>
-
-    <div class="key white"  style="left: -190px"data-keyname = 'LA3'  onclick="keyPressed()"> 
-        <audio id = "LA3" src = "instruments/notas/piano/LA3.mp3" type = "audio/mpeg"> </audio>
-        <label>La</label>
-    </div>
-
-    <div class="key black" style="left: -220px"data-keyname = 'LAS3'  onclick="keyPressed()"> 
-        <audio id = "LAS3" src = "instruments/notas/piano/LAS3.mp3" type = "audio/mpeg"> </audio>
-        <label>Re#</label>
-    </div>
-    
-    <div class="key white" style="left: -250px"data-keyname = "SI3" onclick="keyPressed()">
-         <audio id = "SI3" src = "instruments/notas/piano/SI3.mp3" type = "audio/mpeg"> </audio>
-         <label>Si</label>
-        </div>
+<div class="piano-options">
+    <input onclick="clickEscala(this)" type="checkbox" name="Aguda" value="Aguda"> Aguda
+    <input onclick="clickEscala(this)" type="checkbox" name="Media" value="Media" checked> Media
+    <input onclick="clickEscala(this)" type="checkbox" name="Grave" value="Grave"> Grave
 </div>
+
+<div class="pianoCompleto">
+    <div class = "octava" id="pianoGrave" style="display:none">
+        <div class="do key-container ">
+                <div class="white key" data-keyname = "DO3" onclick="keyPressed()">
+                    <audio id = "DO3" src = "instruments/notas/piano/DO3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "DOS3" onclick="keyPressed()">
+                <audio id = "DOS3" src = "instruments/notas/piano/DOS3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+        </div>
+        <div class="re key-container ">
+            <div class="key white" data-keyname = "RE3" onclick="keyPressed()">
+                <audio id = "RE3" src = "instruments/notas/piano/RE3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "RES3" onclick="keyPressed()">
+                <audio id = "RES3" src = "instruments/notas/piano/RES3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+        <div class="mi key-container ">
+            <div class="key white" data-keyname = "MI3" onclick="keyPressed()">
+                <audio id = "MI3" src = "instruments/notas/piano/MI3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+        </div>
+        <div class="fa key-container ">
+            <div class="key white" data-keyname = "FA3" onclick="keyPressed()">
+                <audio id = "FA3" src = "instruments/notas/piano/FA3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "FAS3" onclick="keyPressed()">
+            <audio id = "FAS3" src = "instruments/notas/piano/FAS3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+        <div class="sol key-container ">
+            <div class="key white" data-keyname = "SOL3" onclick="keyPressed()">
+                <audio id = "SOL3" src = "instruments/notas/piano/SOL3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "SOLS3" onclick="keyPressed()">
+            <audio id = "SOLS3" src = "instruments/notas/piano/SOLS3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+        <div class="la key-container ">
+            <div class="key white" data-keyname = "LA3" onclick="keyPressed()">
+            <audio id = "LA3" src = "instruments/notas/piano/LA3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "LAS3" onclick="keyPressed()">
+            <audio id = "LAS3" src = "instruments/notas/piano/LAS3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+        <div class="si key-container ">
+            <div class="key white" data-keyname = "SI3" onclick="keyPressed()">
+            <audio id = "SI3" src = "instruments/notas/piano/SI3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+    </div>
+    
+    <div class = "octava" id="pianoMedio">
+        <div class="do key-container ">
+                <div class="white key" data-keyname = "DO3" onclick="keyPressed()">
+                    <audio id = "DO3" src = "instruments/notas/piano/DO3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "DOS3" onclick="keyPressed()">
+                <audio id = "DOS3" src = "instruments/notas/piano/DOS3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+        </div>
+        <div class="re key-container ">
+            <div class="key white" data-keyname = "RE3" onclick="keyPressed()">
+                <audio id = "RE3" src = "instruments/notas/piano/RE3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "RES3" onclick="keyPressed()">
+                <audio id = "RES3" src = "instruments/notas/piano/RES3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+        <div class="mi key-container ">
+            <div class="key white" data-keyname = "MI3" onclick="keyPressed()">
+                <audio id = "MI3" src = "instruments/notas/piano/MI3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+        </div>
+        <div class="fa key-container ">
+            <div class="key white" data-keyname = "FA3" onclick="keyPressed()">
+                <audio id = "FA3" src = "instruments/notas/piano/FA3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "FAS3" onclick="keyPressed()">
+            <audio id = "FAS3" src = "instruments/notas/piano/FAS3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+        <div class="sol key-container ">
+            <div class="key white" data-keyname = "SOL3" onclick="keyPressed()">
+                <audio id = "SOL3" src = "instruments/notas/piano/SOL3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "SOLS3" onclick="keyPressed()">
+            <audio id = "SOLS3" src = "instruments/notas/piano/SOLS3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+        <div class="la key-container ">
+            <div class="key white" data-keyname = "LA3" onclick="keyPressed()">
+            <audio id = "LA3" src = "instruments/notas/piano/LA3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "LAS3" onclick="keyPressed()">
+            <audio id = "LAS3" src = "instruments/notas/piano/LAS3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+        <div class="si key-container ">
+            <div class="key white" data-keyname = "SI3" onclick="keyPressed()">
+            <audio id = "SI3" src = "instruments/notas/piano/SI3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+    </div>
+    
+    <div class = "octava" id="pianoAgudo" style="display:none">
+        <div class="do key-container ">
+                <div class="white key" data-keyname = "DO3" onclick="keyPressed()">
+                    <audio id = "DO3" src = "instruments/notas/piano/DO3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "DOS3" onclick="keyPressed()">
+                <audio id = "DOS3" src = "instruments/notas/piano/DOS3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+        </div>
+        <div class="re key-container ">
+            <div class="key white" data-keyname = "RE3" onclick="keyPressed()">
+                <audio id = "RE3" src = "instruments/notas/piano/RE3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "RES3" onclick="keyPressed()">
+                <audio id = "RES3" src = "instruments/notas/piano/RES3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+        <div class="mi key-container ">
+            <div class="key white" data-keyname = "MI3" onclick="keyPressed()">
+                <audio id = "MI3" src = "instruments/notas/piano/MI3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+        </div>
+        <div class="fa key-container ">
+            <div class="key white" data-keyname = "FA3" onclick="keyPressed()">
+                <audio id = "FA3" src = "instruments/notas/piano/FA3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "FAS3" onclick="keyPressed()">
+            <audio id = "FAS3" src = "instruments/notas/piano/FAS3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+        <div class="sol key-container ">
+            <div class="key white" data-keyname = "SOL3" onclick="keyPressed()">
+                <audio id = "SOL3" src = "instruments/notas/piano/SOL3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "SOLS3" onclick="keyPressed()">
+            <audio id = "SOLS3" src = "instruments/notas/piano/SOLS3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+        <div class="la key-container ">
+            <div class="key white" data-keyname = "LA3" onclick="keyPressed()">
+            <audio id = "LA3" src = "instruments/notas/piano/LA3.mp3" type = "audio/mpeg"> </audio>
+            </div>
+            <div class="key black" data-keyname = "LAS3" onclick="keyPressed()">
+            <audio id = "LAS3" src = "instruments/notas/piano/LAS3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+        <div class="si key-container ">
+            <div class="key white" data-keyname = "SI3" onclick="keyPressed()">
+            <audio id = "SI3" src = "instruments/notas/piano/SI3.mp3" type = "audio/mpeg"> </audio>
+            </div>            
+        </div>
+    </div>
+</div>
+
 
 <audio id = "audio-test" src = "instruments/notas/piano/escala.mp3" type = "audio/mpeg"> </audio>
 

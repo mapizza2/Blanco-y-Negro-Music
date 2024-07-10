@@ -1,12 +1,14 @@
 .piano {
     display: flex;
     justify-content: center;
-    padding-left: 240px;
 }
-
+.key-container {
+    position:relative;
+    display: inline-block;
+}
 .key {
     cursor: pointer;
-    height: 160px;
+    display: inline-block;
     border-spacing: 0px;
     border: thin solid #000;
     margin: 0px;
@@ -14,20 +16,27 @@
 }
 
 .white {
-    background-color: black;
-    width: 60px;
-    padding: 0px;
-    margin: 0px;
+    width: 40px;
+    height: 200px;
+    background-color: white;
     position: relative;
-    display: inline-block;
+    z-index: 0
 }
 
 .black {
-    background-color: white;
-    width: 40px;
-    position: relative;
-    left: -20px;
+    width: 30px;
+    height: 120px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 25px;
     z-index: 1;
-    height: 80px;
-    color:white;
+}
+
+.pianoCompleto{
+    display: flex;
+}
+
+.octava{
+    display: inline-flex;
 }
