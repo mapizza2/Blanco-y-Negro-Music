@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const pianoLink = document.getElementById('piano-link');
-    const bateriaLink = document.getElementById('bateria-link');
+    const xilofonoLink = document.getElementById('xilofono-link');
     const content = document.getElementById('content');
 
     if (pianoLink) {
@@ -25,10 +25,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (bateriaLink) {
-        bateriaLink.addEventListener('click', function(event) {
+    if (xilofonoLink) {
+        xilofonoLink.addEventListener('click', function(event) {
             event.preventDefault();
-            fetch('instruments/bateria.html')
+            fetch('instruments/piano.html')
+                .then(response => response.text())
+                .then(html => {
+                    content.innerHTML = html;
+                    if (!document.getElementById('piano-style')) {
+                        var head = document.head;
+                        var link = document.createElement('link');
+                        link.id = 'piano-style';
+                        link.rel = 'stylesheet';
+                        link.type = 'text/css';
+                        link.href = 'styles/piano.css';
+                        link.media = 'all';
+                        head.appendChild(link);
+                    }
+                    attachKeyEvents(); // Asegurémonos de adjuntar eventos después de cargar el piano
+                });
         });
     }
     // Código para el enlace de la batería sigue igual...
@@ -61,27 +76,20 @@ function clickEscala(event) {
     console.log(event.name);
     console.log(event.checked);
     if (event.name == "Media") {
-        if (event.checked == true) {
-            document.getElementById("pianoMedio").style.display = "inline-flex";
-        }
-        else if (event.checked == false) {
-            document.getElementById("pianoMedio").style.display = "none";
-        }
+        updateDisplay (document.getElementById("pianoMedio"), event.checked);
     }
     if (event.name == "Aguda") {
-        if (event.checked == true) {
-            document.getElementById("pianoAgudo").style.display = "inline-flex";
-        }
-        else if (event.checked == false) {
-            document.getElementById("pianoAgudo").style.display = "none";
-        }
+        updateDisplay (document.getElementById("pianoAgudo"), event.checked);
     }
     if (event.name == "Grave") {
-        if (event.checked == true) {
-            document.getElementById("pianoGrave").style.display = "inline-flex";
-        }
-        else if (event.checked == false) {
-            document.getElementById("pianoGrave").style.display = "none";
-        }
+        updateDisplay (document.getElementById("pianoGrave"), event.checked);
+    }
+}
+function updateDisplay (element,visible) {
+    if (visible == true) {
+        element.style.display = "inline-flex";
+    }
+    else if (visible == false) {
+        element.style.display = "none";
     }
 }

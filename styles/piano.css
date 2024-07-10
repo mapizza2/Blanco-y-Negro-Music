@@ -34,9 +34,16 @@
 }
 
 .pianoCompleto{
-    display: flex;
+    display: table;
+    text-align: center;
+    margin:auto;
 }
 
 .octava{
     display: inline-flex;
+}
+.pianoOptions {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px
 }

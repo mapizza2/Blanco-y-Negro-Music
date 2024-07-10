@@ -1,21 +1,21 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #2dcc42; /* Un verde suave */
+    background-color: #63a181; /* Un verde suave */
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: red; /* Un verde más oscuro */
+    background-color: darkblue; /* Un verde más oscuro */
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px 0; 
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    background-color: #acb806; /* Un verde medio */
+    background-color: #869588; /* Un verde medio */
     text-align: center;
     margin: 0;
 }
@@ -32,5 +32,5 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #2e7d32; /* Un verde más oscuro para el hover */
+    background-color: #63a181; /* Un verde más oscuro para el hover */
 }
