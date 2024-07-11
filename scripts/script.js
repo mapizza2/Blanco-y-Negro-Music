@@ -64,9 +64,20 @@ function keyPressed(event) {
         const note = event.target.dataset.keyname; // Accedemos al texto a través del evento
         //alert('Tecla ' + note + ' pulsada!');
         document.getElementById(note).play();
-        console.log("plating");
-    }
-
+        if (event.target.classList.contains("white")) 
+        {
+            event.target.style.backgroundColor = "#eeeeee"
+        setTimeout(() => {
+            event.target.style.backgroundColor = "white"
+         }, 200);
+        }
+        else {
+            event.target.style.backgroundColor = "#323232"
+        setTimeout(() => {
+            event.target.style.backgroundColor = "black"
+         }, 200);
+        }
+        }
    }
 
 function mostrar(texto) {
