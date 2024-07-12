@@ -115,10 +115,8 @@ function playArray (song) {
     for (let i = 0; i < song.length; i++) {
         setTimeout(() => {
             if (song[i]!=" ") {
-                document.querySelector('[data-keyname="' + song[i]+'"]').dispatchEvent(new MouseEvent('mouseover'));
                 document.querySelector('[data-keyname="' + song[i]+'"]').dispatchEvent(new MouseEvent('mousedown'));
                 document.querySelector('[data-keyname="' + song[i]+'"]').dispatchEvent(new MouseEvent('mouseup'));
-                document.querySelector('[data-keyname="' + song[i]+'"]').dispatchEvent(new MouseEvent('click'));
             }
         }, i*600);
     }    
@@ -131,8 +129,17 @@ function estrellita (notas) {
 }
 
 function pollitos (notas){
-    const twinkleTwinkle = ["tonta", "DO4", "DO4", "SOL4","SOL4","LA4","LA4", "SOL4", " ", "FA4", "FA4", "MI4", "MI4", "RE4", "RE4", "DO4", " ",
-        "SOL4", "SOL4", "FA4", "FA4", "MI4", "MI4", "RE4", " ", "SOL4", "SOL4", "FA4", "FA4", "MI4", "MI4", "RE4", " ",
-        "DO4", "DO4", "SOL4","SOL4","LA4","LA4", "SOL4", " ", "FA4", "FA4", "MI4", "MI4", "RE4", "RE4", "DO4"];
-    playArray(twinkleTwinkle)
+    const pollitos = ["tonta", "DO4", "RE4", "MI4", "FA4", "SOL4", " ", "SOL4", " ", "LA4", "LA4", "LA4", "LA4", "SOL4", " ", 
+        "SOL4", " ", "FA4", "FA4", "FA4", "FA4", "MI4", " ", "MI4", " ", "RE4", "RE4", 
+        "RE4", "RE4", "DO4", " ", "DO4", " ", " ", "DO4", "RE4", "MI4", "FA4", "SOL4", " ", "SOL4", " ", "LA4", "LA4", "LA4", "LA4", "SOL4", " ", 
+        "SOL4", " ", "FA4", "FA4", "FA4", "FA4", "MI4", " ", "MI4", " ", "RE4", "RE4", 
+        "RE4", "RE4", "DO4", " ", "DO4"];
+    playArray(pollitos)
+}
+
+function feliz (notas){
+    const feliz = ["tonta", "SOL4", "SOL4","LA4", "SOL4", "DO5", "SI4", " ", "SOL4", "SOL4", "LA4",
+        "SOL4", "RE5", "DO5", " ", "SOL4", "SOL4", "SOL5", "MI5", "DO5", "SI4",
+        "LA4", " ", "FA5","FA5","MI5", "DO5", "RE5", "DO5"];
+    playArray(feliz)
 }
