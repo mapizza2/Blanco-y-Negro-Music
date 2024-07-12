@@ -28,17 +28,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (xilofonoLink) {
         xilofonoLink.addEventListener('click', function(event) {
             event.preventDefault();
-            fetch('instruments/piano.html')
+            fetch('instruments/xilofono.html')
                 .then(response => response.text())
                 .then(html => {
                     content.innerHTML = html;
                     if (!document.getElementById('piano-style')) {
                         var head = document.head;
                         var link = document.createElement('link');
-                        link.id = 'piano-style';
+                        link.id = 'xilofono-style';
                         link.rel = 'stylesheet';
                         link.type = 'text/css';
-                        link.href = 'styles/piano.css';
+                        link.href = 'styles/xilofono.css';
                         link.media = 'all';
                         head.appendChild(link);
                     }
@@ -80,6 +80,13 @@ function keyPressed(event) {
         }
    }
 
+   function keyPressedXilofono(event){
+    if (event != undefined) {
+        const note = event.target.dataset.keyname; // Accedemos al texto a través del evento
+        //alert('Tecla ' + note + ' pulsada!');
+        document.getElementById(note).play();
+   }
+   }
 function mostrar(texto) {
     alert (texto);
 }
@@ -103,4 +110,29 @@ function updateDisplay (element,visible) {
     else if (visible == false) {
         element.style.display = "none";
     }
+}
+function playArray (song) {
+    for (let i = 0; i < song.length; i++) {
+        setTimeout(() => {
+            if (song[i]!=" ") {
+                document.querySelector('[data-keyname="' + song[i]+'"]').dispatchEvent(new MouseEvent('mouseover'));
+                document.querySelector('[data-keyname="' + song[i]+'"]').dispatchEvent(new MouseEvent('mousedown'));
+                document.querySelector('[data-keyname="' + song[i]+'"]').dispatchEvent(new MouseEvent('mouseup'));
+                document.querySelector('[data-keyname="' + song[i]+'"]').dispatchEvent(new MouseEvent('click'));
+            }
+        }, i*600);
+    }    
+}
+function estrellita (notas) {
+    const twinkleTwinkle = ["tonta", "DO4", "DO4", "SOL4","SOL4","LA4","LA4", "SOL4", " ", "FA4", "FA4", "MI4", "MI4", "RE4", "RE4", "DO4", " ",
+                            "SOL4", "SOL4", "FA4", "FA4", "MI4", "MI4", "RE4", " ", "SOL4", "SOL4", "FA4", "FA4", "MI4", "MI4", "RE4", " ",
+                            "DO4", "DO4", "SOL4","SOL4","LA4","LA4", "SOL4", " ", "FA4", "FA4", "MI4", "MI4", "RE4", "RE4", "DO4"];
+    playArray(twinkleTwinkle)
+}
+
+function pollitos (notas){
+    const twinkleTwinkle = ["tonta", "DO4", "DO4", "SOL4","SOL4","LA4","LA4", "SOL4", " ", "FA4", "FA4", "MI4", "MI4", "RE4", "RE4", "DO4", " ",
+        "SOL4", "SOL4", "FA4", "FA4", "MI4", "MI4", "RE4", " ", "SOL4", "SOL4", "FA4", "FA4", "MI4", "MI4", "RE4", " ",
+        "DO4", "DO4", "SOL4","SOL4","LA4","LA4", "SOL4", " ", "FA4", "FA4", "MI4", "MI4", "RE4", "RE4", "DO4"];
+    playArray(twinkleTwinkle)
 }

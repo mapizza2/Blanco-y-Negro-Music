@@ -1,0 +1,14 @@
+.key {
+    cursor: pointer;
+    display: inline-block;
+    border-spacing: 0px;
+    border: thin solid #000;
+    border-collapse: collapse;
+}
+
+.xdo {
+    width: 40px;
+    height: 100px;
+    background-color: red;
+    margin: 5px;
+}
