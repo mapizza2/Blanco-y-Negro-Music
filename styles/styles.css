@@ -32,5 +32,5 @@ nav a {
 }
 
 nav a:hover {
-    background-color: white; /* Un verde más oscuro para el hover */
+    background-color: #a8a8a8; /* Un verde más oscuro para el hover */
 }
