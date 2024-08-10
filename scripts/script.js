@@ -1,3 +1,6 @@
+let grabacion = []
+let recordingStartTime; 
+
 document.addEventListener('DOMContentLoaded', function() {
     const pianoLink = document.getElementById('piano-link');
     const xilofonoLink = document.getElementById('xilofono-link');
@@ -64,9 +67,14 @@ function keyPressed(event) {
         const note = event.target.dataset.keyname; // Accedemos al texto a través del evento
         //alert('Tecla ' + note + ' pulsada!');
         document.getElementById(note).play();
+        if (document.getElementById("grabar").innerHTML=="Grabando") {
+            noteTime= {note:note, time:Date.now()-recordingStartTime}
+            grabacion.push(noteTime);
+               }
+        
         if (event.target.classList.contains("white")) 
         {
-            event.target.style.backgroundColor = "#eeeeee"
+            event.target.style.backgroundColor = "#c9c9c9"
         setTimeout(() => {
             event.target.style.backgroundColor = "white"
          }, 200);
@@ -142,4 +150,32 @@ function feliz (notas){
         "SOL4", "RE5", "DO5", " ", "SOL4", "SOL4", "SOL5", "MI5", "DO5", "SI4",
         "LA4", " ", "FA5","FA5","MI5", "DO5", "RE5", "DO5"];
     playArray(feliz)
+}
+function grabar (){
+    if (document.getElementById("grabar").innerHTML=="Grabar") {
+        document.getElementById("grabar").innerHTML="Grabando"
+        noteTime= {note:"tonta", time:0}
+        grabacion=[noteTime]
+        recordingStartTime = Date.now();
+        document.getElementById("grabar").classList.add("buttonRed")
+    }
+    else if (document.getElementById("grabar").innerHTML=="Grabando") {
+        document.getElementById("grabar").innerHTML="Grabar"
+        document.getElementById("grabar").classList.remove("buttonRed")
+    }
+    
+}
+
+function reproducir(){
+    playArrayTime(grabacion)
+}
+function playArrayTime (song) {
+    for (let i = 0; i < song.length; i++) {
+        setTimeout(() => {
+            if (song[i].note!=" ") {
+                document.querySelector('[data-keyname="' + song[i].note+'"]').dispatchEvent(new MouseEvent('mousedown'));
+                document.querySelector('[data-keyname="' + song[i].note+'"]').dispatchEvent(new MouseEvent('mouseup'));
+            }
+        }, song[i].time);
+    }    
 }
