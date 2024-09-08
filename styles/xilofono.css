@@ -1,14 +1,94 @@
-.key {
+.xilo {
     cursor: pointer;
     display: inline-block;
     border-spacing: 0px;
-    border: thin solid #000;
-    border-collapse: collapse;
+    text-align: center;
+    width: 40px;
+    margin: 2px;
+    padding-top: 20px;
+
 }
 
 .xdo {
-    width: 40px;
-    height: 100px;
     background-color: red;
-    margin: 5px;
+    height: 100px;
+}
+
+.xre {
+    background-color: yellow;
+    height: 90px;
+}
+
+.xmi {
+    background-color: orange;
+    height: 80px;
+
+
+}
+
+.xfa {
+    background-color: purple;
+    height: 70px;
+}
+
+.xsol {
+    background-color: lightblue;
+    height: 60px;
+}
+
+.xla {
+    background-color: green;
+    height: 50px;
+}
+
+.xsi {
+    background-color: pink;
+    height: 40px;
+}
+
+
+.xiloGrande {
+    display: table;
+    text-align: center;
+    margin:auto;
+    padding-top: 20px;
+}
+
+.button {
+    background-color: #869588; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    margin:auto;
+  }
+
+  .notRec{
+	background-color: darkred;
+}
+
+.Rec{
+	animation-name: pulse;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes pulse{
+	0%{
+		box-shadow: 0px 0px 5px 0px rgba(173,0,0,.3);
+	}
+	65%{
+		box-shadow: 0px 0px 5px 13px rgba(173,0,0,.3);
+	}
+	90%{
+		box-shadow: 0px 0px 5px 13px rgba(173,0,0,0);
+	}
+}
+.reproducir{
+    text-align: center;
+    padding-top: 50px;
 }
